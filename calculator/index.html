@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+<style>
+* {
+	padding: 0px; 
+	margin: 0px; 
+	box-sizing: border-box;
+}
+body {
+	background: #333;
+}
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+form {
+	width: 400px;
+	background: #616161;
+	padding: 1.5rem;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 0px 2px 0px #000;
+}
+.project-title {
+	display: block;
+	font-size: 2rem;
+	color: #fff;
+}
+#show-answer {
+	width: 100%;
+	padding: 1rem 0.5rem;
+	background: aliceblue;
+	border-radius: 8px;
+	border: 1px solid #000;
+	margin: 0 0 1rem 0;
+	font-size: 2rem;
+	box-shadow: 0px 0px 2px #000;
+	text-align: right;
+}
+input {
+	margin: 0.2rem 0.1rem;
+	font-size: 2rem;
+	padding: 1rem 1.8rem;
+	border: 1px solid #000;
+	width: 23.2%;
+	box-shadow: 2px 2px 2px #000;
+}
+#cls {
+	width: 48.6%;
+	background: red;
+	color: #fff;
+}
+#equal {
+	background: #03a9f4;
+}
+#history {
+    text-align: right;
+    display: block;
+    color: #d2d2d2;
+    font-size: 1.3rem;
+    padding: 0.6rem;
+    height: 42PX;
+}
+</style>
+</head>
+<body>
+	<section>
+		<form name="calc">
+			<label class="project-title">Calculator</label>
+			<span id="history"></span>
+			<input type="text" name="answer" id="show-answer" readonly>
+				<div class="cst-row">
+					<input type="button" id="cls" name="" value="c">
+					<input type="button" value="**" onclick="calc.answer.value += '**' ">
+					<input type="button" value="/" onclick="calc.answer.value += '/' ">
+				</div>
+				<div class="cst-row">					
+					<input type="button" value="7" onclick="calc.answer.value += '7' ">
+					<input type="button" value="8" onclick="calc.answer.value += '8' ">
+					<input type="button" value="9" onclick="calc.answer.value += '9' ">
+					<input type="button" value="*" onclick="calc.answer.value += '*' ">	
+				</div>
+				<div class="cst-row">					
+					<input type="button" value="4" onclick="calc.answer.value += '4' ">
+					<input type="button" value="5" onclick="calc.answer.value += '5' ">
+					<input type="button" value="6" onclick="calc.answer.value += '6' ">
+					<input type="button" value="-" onclick="calc.answer.value += '-' ">	
+				</div>
+				<div class="cst-row">					
+					<input type="button" value="1" onclick="calc.answer.value += '1' ">
+					<input type="button" value="2" onclick="calc.answer.value += '2' ">
+					<input type="button" value="3" onclick="calc.answer.value += '3' ">
+					<input type="button" value="+" onclick="calc.answer.value += '+' ">	
+				</div>
+				<div class="cst-row">					
+					<input type="button" value="0" onclick="calc.answer.value += '0' ">
+					<input type="button" value="00" onclick="calc.answer.value += '00' ">
+					<input type="button" value="." onclick="calc.answer.value += '.' ">
+					<input type="button" id="equal" name="" value="=">	
+				</div>
+		</form>
+	</section>
+
+	<script>
+
+		// Equal
+		document.getElementById("equal").addEventListener("click", equalValue);
+
+		function equalValue() {
+		  var myVal = document.getElementById("show-answer").value;
+			document.getElementById("history").innerHTML = myVal;
+			calc.answer.value = eval(calc.answer.value)
+		}
+
+		// clear history
+		document.getElementById("cls").addEventListener("click", clearHistory);
+
+		function clearHistory() {
+			document.getElementById("history").innerHTML = "";
+			calc.answer.value = '';
+		}
+
+	</script>
+</body>
+</html>

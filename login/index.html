@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Login</h1>
+      <form action="welcome.html" method="post" id="login-form">
+
+        <div class="field email">
+          <div class="input-area">
+            <input type="email" class="inputBox" placeholder="Email Address">
+          </div>
+          <div class="error error-txt">Email can't be blank</div>
+        </div>
+
+        <div class="field password">
+          <div class="input-area">
+            <input type="password" class="inputBox" placeholder="Password">
+          </div>
+          <div class="error error-txt">Password can't be blank</div>
+        </div>
+
+        <div class="check-remember">
+          <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+          <label for="vehicle1"> Remember Me!</label>
+        </div>
+
+        <input type="submit" value="Login" class="btn">
+
+      </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
